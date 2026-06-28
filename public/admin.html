@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin · bebomoments</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FF7043">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap" style="max-width:640px">
+
+  <header class="profile" style="padding-bottom:6px">
+    <a href="index.html" class="backlink">← View site</a>
+    <div class="avatar" style="font-size:40px">🔐</div>
+    <h1>Admin</h1>
+    <p class="bio">Upload a worksheet PDF. It's auto-branded with your logo + bookmarks and goes live for everyone.</p>
+  </header>
+
+  <!-- LOGIN -->
+  <section id="loginCard" class="finder">
+    <div class="q">
+      <label>🔑 Admin password</label>
+      <input type="password" id="pw" class="adm-input" placeholder="Enter password" autocomplete="current-password">
+    </div>
+    <button class="btn" id="loginBtn">Log in</button>
+    <p class="hint" id="loginMsg"></p>
+  </section>
+
+  <!-- PANEL -->
+  <section id="panel" style="display:none">
+    <div class="finder">
+      <h3 class="adm-h">⬆️ Upload a worksheet</h3>
+      <form id="uploadForm">
+        <div class="adm-grid">
+          <div class="q"><label>Title *</label><input class="adm-input" name="title" placeholder="e.g. Animals Activity Bundle" required></div>
+          <div class="q"><label>Emoji</label><input class="adm-input" name="emoji" placeholder="🐾" maxlength="4"></div>
+          <div class="q"><label>Age range</label><input class="adm-input" name="age" placeholder="Ages 2–4"></div>
+          <div class="q"><label>Category</label><input class="adm-input" name="category" placeholder="Themes" list="cats">
+            <datalist id="cats"><option>Free<option>Prewriting<option>Maths<option>Themes<option>Fine Motor<option>Routines<option>Bundles</datalist>
+          </div>
+          <div class="q"><label>Price ₹ (0 = free)</label><input class="adm-input" name="price" type="number" min="0" value="0"></div>
+          <div class="q"><label>Was ₹ (optional)</label><input class="adm-input" name="was" type="number" min="0" placeholder=""></div>
+          <div class="q"><label>Ribbon tag (optional)</label><input class="adm-input" name="tag" placeholder="BESTSELLER" maxlength="24"></div>
+          <div class="q"><label>Short description</label><input class="adm-input" name="meta" placeholder="20 pages of tracing fun" maxlength="160"></div>
+        </div>
+        <div class="q" style="margin-top:4px">
+          <label>PDF file *</label>
+          <input class="adm-input" id="fileInput" name="file" type="file" accept="application/pdf" required>
+          <p class="hint" style="text-align:left;margin-top:6px">We add a branded cover, your logo footer on every page, and PDF bookmarks automatically.</p>
+        </div>
+        <button class="btn" id="uploadBtn" type="submit">✨ Brand &amp; publish</button>
+        <p class="hint" id="uploadMsg"></p>
+      </form>
+    </div>
+
+    <div class="sec-title"><h2>📚 Published worksheets</h2><span class="ln"></span></div>
+    <div id="adminList" class="adm-list"><p class="hint">Loading…</p></div>
+    <p class="foot" style="margin-top:24px"><a href="#" id="logout">Log out</a></p>
+  </section>
+
+</div>
+<script src="admin.js"></script>
+</body>
+</html>

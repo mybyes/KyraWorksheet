@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bebomoments · Toddler Activity Worksheets &amp; Printables</title>
+<meta name="description" content="Simple, screen-free toddler activity worksheets & printables by bebomoments. Easy play ideas for ages 1–5. No fancy stuff, just what works.">
+<meta name="theme-color" content="#FF7043">
+<meta property="og:title" content="bebomoments · Toddler Activity Worksheets">
+<meta property="og:description" content="Screen-free printables & simple play ideas for toddlers. Grab the free Starter Pack!">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="profile">
+    <div class="avatar">🧸</div>
+    <h1>bebomoments</h1>
+    <div class="handle">@bebomoments · Toddler Activities &amp; Mom Life</div>
+    <p class="bio">Toddler mom figuring it out daily 💛 Easy meals + simple play ideas. No fancy stuff, just what works.</p>
+    <nav class="socials">
+      <a href="https://www.instagram.com/bebomoments/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://www.youtube.com/@bebomoments-kyra" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a href="#freshSec" id="shopLink">🛍️ Shop</a>
+    </nav>
+  </header>
+
+  <!-- PLAY NOW -->
+  <a href="play.html" class="playcard">
+    <div class="playcard-emoji">🎲</div>
+    <div>
+      <span class="playcard-tag">Free tool ✨</span>
+      <h2>What should we play <i>right now?</i></h2>
+      <p>Tell me the age + minutes you have → get one no-prep idea using stuff you own.</p>
+      <span class="playcard-cta">Try Play Now →</span>
+    </div>
+  </a>
+
+  <!-- FREE HERO -->
+  <section class="freebie">
+    <span class="tag">Free Gift 🎁</span>
+    <h2>Toddler Starter Pack</h2>
+    <p>5 screen-free activity pages · Ages 2–4 · print at home on plain A4</p>
+    <button class="btn" data-free data-file="worksheets/free-starter-pack.pdf" data-name="Toddler Starter Pack">
+      ⬇️ Get it free
+    </button>
+  </section>
+
+  <!-- FRESH (admin-uploaded, live for everyone) -->
+  <div id="freshSec" style="display:none">
+    <div class="sec-title"><h2>🆕 Fresh worksheets</h2><span class="ln"></span></div>
+    <div class="grid" id="fresh"></div>
+  </div>
+
+  <!-- CURATED SHOP -->
+  <div id="shop" class="sec-title"><h2>🛍️ Worksheet Shop</h2><span class="ln"></span></div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="trust">
+    <div>🖨️ <span>Print</span> at home</div>
+    <div>📵 <span>Screen-free</span></div>
+    <div>♻️ <span>Reuse</span> forever</div>
+    <div>💛 <span>Mom-made</span></div>
+  </div>
+
+  <footer class="foot">
+    <p>Made with 💛 for tired-but-trying toddler parents.</p>
+    <p>Questions? DM <a href="https://www.instagram.com/bebomoments/" target="_blank" rel="noopener">@bebomoments</a></p>
+    <p style="margin-top:10px;font-size:11px;color:#c2b4a2">© <span id="yr"></span> bebomoments · For personal &amp; classroom use. Please don't resell.</p>
+  </footer>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <span class="x" id="modalX">✕</span>
+    <div class="em" id="modalEm">🎁</div>
+    <h3 id="modalTitle">Where should I send it?</h3>
+    <p id="modalSub">Pop in your email and the worksheet is yours.</p>
+    <form id="emailForm">
+      <input type="email" id="emailInput" placeholder="you@email.com" required autocomplete="email">
+      <button class="btn" type="submit" id="modalBtn">Send me the worksheet</button>
+    </form>
+    <small>No spam — just toddler activities &amp; the occasional freebie. 💛</small>
+  </div>
+</div>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>

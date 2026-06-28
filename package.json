@@ -1,0 +1,17 @@
+{
+  "name": "bebomoments-live",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "bebomoments — toddler worksheet shop + Play Now finder + admin upload with auto-branding",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.0",
+    "express": "^4.21.2",
+    "multer": "^2.0.1",
+    "pdf-lib": "^1.17.1"
+  }
+}

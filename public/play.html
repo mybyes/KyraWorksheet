@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Now · bebomoments — what to do with your toddler right now</title>
+<meta name="description" content="Stuck? Tell us your toddler's age, how many minutes you have & your energy — get one no-prep, screen-free activity using things you already own. Free from bebomoments.">
+<meta name="theme-color" content="#FF7043">
+<meta property="og:title" content="Play Now · bebomoments">
+<meta property="og:description" content="The free tool that tells you exactly what to do with your toddler right now — using stuff you already have.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="profile" style="padding-bottom:0">
+    <a href="index.html" class="backlink">← bebomoments</a>
+    <div class="avatar" style="font-size:42px">🎲</div>
+    <h1>Play Now</h1>
+    <p class="bio">Stuck on what to do? Tell me about <b>right now</b> — I'll give you one no-prep, screen-free idea using things you already have. 💛</p>
+  </header>
+
+  <!-- FINDER -->
+  <section class="finder">
+    <div class="q">
+      <label>👶 How old?</label>
+      <div class="opts">
+        <button class="opt" data-group="age" data-val="1">1 yr</button>
+        <button class="opt" data-group="age" data-val="2">2 yrs</button>
+        <button class="opt" data-group="age" data-val="3">3 yrs</button>
+        <button class="opt" data-group="age" data-val="4">4+ yrs</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label>⏱️ How long do you have?</label>
+      <div class="opts">
+        <button class="opt" data-group="time" data-val="5">~5 min</button>
+        <button class="opt" data-group="time" data-val="10">~10 min</button>
+        <button class="opt" data-group="time" data-val="15">15+ min</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label>🔋 What's the vibe? <small>(optional)</small></label>
+      <div class="opts">
+        <button class="opt" data-group="energy" data-val="calm">😌 Wind down</button>
+        <button class="opt" data-group="energy" data-val="active">⚡ Burn energy</button>
+        <button class="opt" data-group="energy" data-val="any">🙂 Either</button>
+      </div>
+    </div>
+
+    <div class="q">
+      <label>🧼 Mess level? <small>(optional)</small></label>
+      <div class="opts">
+        <button class="opt" data-group="mess" data-val="none">🚫 Keep it tidy</button>
+        <button class="opt" data-group="mess" data-val="any">🎨 Mess is fine</button>
+      </div>
+    </div>
+
+    <button class="btn" id="go" disabled>✨ Show me an idea</button>
+    <p class="hint">Pick at least an age &amp; a time. 30+ curated activities — tap “Another idea” for more.</p>
+  </section>
+
+  <div id="result"></div>
+  <div id="saved"></div>
+
+  <footer class="foot">
+    <p>Loved this? <a href="index.html">See the worksheet shop →</a></p>
+    <p style="margin-top:6px">DM me your favorite play wins: <a href="https://www.instagram.com/bebomoments/" target="_blank" rel="noopener">@bebomoments</a></p>
+    <p style="margin-top:10px;font-size:11px;color:#c2b4a2">© <span id="yr"></span> bebomoments · simple play, no fancy stuff</p>
+  </footer>
+</div>
+
+<script src="play.js"></script>
+</body>
+</html>
