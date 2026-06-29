@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop · bebomoments — toddler activity worksheets</title>
+<meta name="description" content="Browse & search bebomoments toddler activity worksheets — tracing, counting, themes, fine motor & more. Screen-free printables for ages 1–5.">
+<meta name="theme-color" content="#FF7043">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="topnav">
+  <a class="topnav-brand" href="/"><img src="assets/logo.png" alt="bebomoments"></a>
+  <div class="topnav-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="play.html">🎲 Play</a>
+    <a href="index.html#freebie">🎁 Free</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="sec-title" style="margin-top:22px"><h2>🛍️ Worksheet Shop</h2><span class="ln"></span></div>
+
+  <div class="searchbar" id="search">
+    <input type="search" id="q" placeholder="Search worksheets… (e.g. tracing, animals)" autocomplete="off">
+  </div>
+  <div class="filters" id="filters"></div>
+  <p class="count-line" id="count"></p>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No worksheets match — try another word. 🙂</div>
+
+  <footer class="foot" style="margin-top:34px">
+    <p>Looking for a quick idea instead? <a href="play.html">Try Play Now →</a></p>
+    <p style="margin-top:6px">DM <a href="https://www.instagram.com/bebomoments/" target="_blank" rel="noopener">@bebomoments</a></p>
+  </footer>
+</div>
+
+<!-- email modal (reused for free downloads / paid notify) -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <span class="x" id="modalX">✕</span>
+    <div class="em" id="modalEm">🎁</div>
+    <h3 id="modalTitle">Where should I send it?</h3>
+    <p id="modalSub">Pop in your email and the worksheet is yours.</p>
+    <form id="emailForm">
+      <input type="email" id="emailInput" placeholder="you@email.com" required autocomplete="email">
+      <button class="btn" type="submit" id="modalBtn">Send me the worksheet</button>
+    </form>
+    <small>No spam — just toddler activities &amp; the occasional freebie. 💛</small>
+  </div>
+</div>
+
+<script src="cover.js?v=3"></script>
+<script src="products.js?v=3"></script>
+<script src="shop.js?v=3"></script>
+</body>
+</html>

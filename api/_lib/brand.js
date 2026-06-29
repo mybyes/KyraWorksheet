@@ -95,7 +95,8 @@ export async function brandPdf(inputBytes, meta = {}) {
     /* outline is a nice-to-have; never block the upload */
   }
 
-  return await out.save();
+  const bytes = await out.save();
+  return { bytes, contentPages: pages.length - 1 }; // minus the cover
 }
 
 function drawCentered(page, text, font, size, color, y, W) {

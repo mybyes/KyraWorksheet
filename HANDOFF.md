@@ -159,6 +159,36 @@ To change the logo: replace `public/assets/logo.png` (used both on-site and in P
 
 ---
 
+## 11. Lite web app layer (added after first push)
+
+Evolved from pure link-in-bio to a "lite web app" while keeping the fast home page.
+Decision rationale: home (Topmate-style) = the front door / fallback that Instagram lands on;
+deeper pages add credibility + Google SEO. "One app, two front doors" — IG → home,
+Google → per-worksheet page. Both share one checkout/brand.
+
+Added:
+- **Top nav** (`.topnav`) on home, play, shop, detail — logo + Shop / Play / Search.
+- **Cover images**: `public/cover.js` (client `window.coverSVG`) + `api/_lib/cover.js`
+  (server ESM `coverSVG`) — KEEP IN SYNC. Generates an SVG worksheet "cover" from metadata
+  so every card looks like a real product (logo, emoji, title, age, price pill). Used in cards
+  and inlined into detail pages (no PDF rasterization needed → Vercel-safe, no `sharp`).
+- **Shared catalog + card renderer**: `public/products.js` (`window.PRODUCTS`, `window.cardHTML`,
+  `tint`, `escHtml`). Used by both home (`app.js`) and shop (`shop.js`).
+- **Shop page**: `public/shop.html` + `shop.js` — merges live uploads + curated, with
+  **search** + **category filter**. Uploaded cards link to detail pages; curated = "Coming soon".
+- **Worksheet detail pages (SSR)**: `GET /worksheet/:id` in `api/index.js` returns full HTML
+  with `<title>`, meta description, canonical, OpenGraph, **JSON-LD Product schema**, inline
+  cover SVG, feature list, price, and CTA (free→download, paid→"Message to buy" via IG DM).
+  `vercel.json` rewrites `/worksheet/(.*)` → the function. Manifest now stores `pages` (content
+  page count, set in `brand.js` return `{bytes, contentPages}`).
+- Scripts are cache-busted with `?v=3`. Bump when editing client JS.
+
+Verified locally: nav on all pages, cover cards on home + shop, search filtering,
+SSR detail page (200 + title + JSON-LD + OG + inline cover + paid CTA), pages count stored.
+
+Still NOT done: per-worksheet raster `og:image` (currently falls back to logo PNG — would need
+`sharp` SVG→PNG; low priority). Buyer accounts / cart / payments still future.
+
 ## 10. For an AI continuing this work
 
 - Owner is **non-technical** — keep things editable, explain plainly, avoid build complexity.
