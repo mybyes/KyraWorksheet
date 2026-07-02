@@ -62,9 +62,14 @@ emailForm.addEventListener("submit", e => {
 });
 
 function deliver(file, name){
-  const a = document.createElement("a");
-  a.href = file; a.download = (name||"bebomoments-worksheet").replace(/\s+/g,"-").toLowerCase()+".pdf";
-  a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove();
+  if (file.toLowerCase().endsWith(".pdf")) {
+    const a = document.createElement("a");
+    a.href = file;
+    a.download = (name || "bebomoments-worksheet").replace(/\s+/g, "-").toLowerCase() + ".pdf";
+    document.body.appendChild(a); a.click(); a.remove();
+  } else {
+    window.open(file, "_blank");
+  }
 }
 function saveEmail(email, data){
   try{ const s = JSON.parse(localStorage.getItem("bebo_subs")||"[]");

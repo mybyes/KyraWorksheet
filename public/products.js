@@ -15,6 +15,10 @@ window.PRODUCTS = [
     meta:"Morning, bedtime & big-feelings cards", price:39, was:149 },
   { emoji:"🧩", title:"Logical Thinking Workbook", age:"Ages 3–6", cat:"Maths",
     meta:"Patterns, odd-one-out & sorting", price:59, was:199 },
+
+  { emoji:"📅", title:"Monthly Play Planner", age:"Ages 1–3", cat:"Routines",
+    meta:"Weekly screen-free play themes", price:20, was:199 },
+
   { emoji:"🎉", title:"MEGA All-in-One Bundle", age:"Ages 2–6", cat:"Bundles",
     meta:"Everything above + bonus packs", price:249, was:899, tag:"BEST VALUE" },
 ];

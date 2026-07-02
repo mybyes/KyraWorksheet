@@ -93,9 +93,14 @@ emailForm.addEventListener("submit", e => {
   if (FORMSPREE_URL) fetch(FORMSPREE_URL, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ email, item: pending?.name || "" }) }).catch(() => {});
   const data = pending; closeModal(); emailInput.value = "";
   if (data.free && data.file) {
-    const a = document.createElement("a");
-    a.href = data.file; a.download = (data.name || "worksheet").replace(/\s+/g, "-").toLowerCase() + ".pdf";
-    a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove();
+    if (data.file.toLowerCase().endsWith(".pdf")) {
+      const a = document.createElement("a");
+      a.href = data.file;
+      a.download = (data.name || "worksheet").replace(/\s+/g, "-").toLowerCase() + ".pdf";
+      document.body.appendChild(a); a.click(); a.remove();
+    } else {
+      window.open(data.file, "_blank");
+    }
   } else alert("Thank you! 💛 I'll email you the worksheet & details shortly.");
 });
 

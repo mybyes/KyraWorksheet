@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bebomoments · Toddler Starter Pack (Free)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --peach:#FF8A65; --coral:#FF7043; --mustard:#FFB74D; --sage:#81C784;
+    --sky:#64B5F6; --plum:#BA68C8; --cream:#FFF8F0; --ink:#4E443C; --line:#E7DBCB;
+  }
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  html,body{margin:0;padding:0;background:#EFE6DA;font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);}
+  .page{
+    width:210mm;min-height:297mm;background:var(--cream);margin:14px auto;padding:16mm 14mm 14mm;
+    position:relative;box-shadow:0 6px 24px rgba(0,0,0,.12);overflow:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Baloo 2',cursive;}
+  .brand{position:absolute;top:8mm;right:14mm;font-weight:800;color:var(--coral);font-size:13pt;letter-spacing:.3px;}
+  .brand small{display:block;font-family:'Quicksand';font-weight:600;color:#9c8e7e;font-size:7.5pt;text-align:right;letter-spacing:1px;text-transform:uppercase;}
+  .age-chip{display:inline-block;background:var(--mustard);color:#5a3d00;font-weight:700;
+    padding:3px 12px;border-radius:999px;font-size:10pt;}
+  .wtitle{font-size:26pt;font-weight:800;margin:6px 0 2px;line-height:1.05;}
+  .wsub{font-size:11.5pt;color:#8a7c6c;font-weight:600;margin:0 0 14px;}
+  .divider{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--peach),var(--mustard),var(--sage),var(--sky),var(--plum));margin:8px 0 16px;}
+  .footer{position:absolute;bottom:9mm;left:14mm;right:14mm;display:flex;justify-content:space-between;
+    align-items:center;font-size:8.5pt;color:#a89a8a;font-weight:600;border-top:2px dotted var(--line);padding-top:6px;}
+  .footer b{color:var(--coral);}
+
+  /* COVER */
+  .cover{background:radial-gradient(120% 90% at 50% 0%,#FFF3E6 0%,var(--cream) 60%);}
+  .cover .hero{text-align:center;margin-top:14mm;}
+  .blob{font-size:84pt;line-height:1;margin:0;}
+  .cover h1{font-size:40pt;margin:6px 0 0;color:var(--coral);}
+  .cover .tag{font-size:14pt;font-weight:700;color:#7a6c5c;margin:2px 0 18px;}
+  .cards{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 0;}
+  .card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px 16px;width:150px;text-align:center;}
+  .card .ic{font-size:30pt;}
+  .card .t{font-weight:800;font-family:'Baloo 2';margin-top:4px;color:var(--ink);font-size:12pt;}
+  .howto{background:#fff;border:2px dashed var(--mustard);border-radius:18px;padding:14px 18px;margin:20px auto 0;max-width:150mm;}
+  .howto h3{margin:0 0 6px;color:var(--coral);font-size:14pt;}
+  .howto ul{margin:0;padding-left:18px;font-weight:600;}
+  .howto li{margin:4px 0;}
+
+  /* generic activity */
+  .row{display:flex;justify-content:space-between;align-items:center;margin:14px 0;gap:10px;}
+  .bigicon{font-size:46pt;width:80px;text-align:center;}
+  .matchcol{flex:1;}
+  .matchrow{display:flex;align-items:center;justify-content:space-between;background:#fff;border:2px solid var(--line);
+    border-radius:16px;padding:10px 16px;margin:10px 0;}
+  .dot{width:18px;height:18px;border-radius:50%;background:var(--peach);}
+  .dot.r{background:var(--coral);}.dot.y{background:var(--mustard);}.dot.g{background:var(--sage);}
+  .dot.b{background:var(--sky);}.dot.p{background:var(--plum);}
+  .swatch{width:54px;height:40px;border-radius:10px;border:2px solid rgba(0,0,0,.08);}
+
+  /* tracing */
+  .trace-row{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 16px;margin:12px 0;}
+  .trace-row .lbl{font-size:30pt;}
+  .trace-svg{flex:1;height:54px;}
+  .count-grid{display:flex;flex-direction:column;gap:0;}
+  .count-line{display:flex;align-items:center;gap:14px;border:2px solid var(--line);background:#fff;border-radius:16px;padding:10px 14px;margin:8px 0;}
+  .numbox{font-family:'Baloo 2';font-weight:800;font-size:30pt;color:var(--coral);width:54px;text-align:center;background:#FFF1E6;border-radius:12px;}
+  .items{flex:1;font-size:26pt;letter-spacing:6px;}
+  .circles{display:flex;gap:8px;}
+  .circ{width:30px;height:30px;border:2px dashed #c9bba8;border-radius:50%;}
+
+  @media print{
+    html,body{background:#fff;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto;page-break-after:always;}
+    .page:last-child{page-break-after:auto;}
+    .noprint{display:none!important;}
+  }
+  .toolbar{position:fixed;top:12px;left:12px;z-index:9;background:#fff;border:2px solid var(--coral);
+    border-radius:999px;padding:8px 16px;font-family:'Baloo 2';font-weight:700;color:var(--coral);
+    box-shadow:0 4px 14px rgba(0,0,0,.15);cursor:pointer;font-size:13px;}
+</style>
+</head>
+<body>
+<button class="toolbar noprint" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- PAGE 1 — COVER -->
+<section class="page cover">
+  <div class="brand">bebomoments<small>simple play · no fancy stuff</small></div>
+  <div class="hero">
+    <p class="blob">🧸✏️🎨</p>
+    <h1>Toddler Starter Pack</h1>
+    <p class="tag">5 screen-free activities · Ages 2–4</p>
+    <span class="age-chip">FREE from bebomoments</span>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="ic">🌈</div><div class="t">Color Match</div></div>
+    <div class="card"><div class="ic">✏️</div><div class="t">Trace Lines</div></div>
+    <div class="card"><div class="ic">🔢</div><div class="t">Count 1–5</div></div>
+    <div class="card"><div class="ic">🐶</div><div class="t">Animal Match</div></div>
+  </div>
+  <div class="howto">
+    <h3>How to use this pack 💛</h3>
+    <ul>
+      <li>Print on plain A4 — no color printer needed.</li>
+      <li>Slip a page into a sleeve + use a dry-erase marker to reuse forever.</li>
+      <li>Sit together for 5–10 mins. Praise the effort, not the result.</li>
+      <li>No pressure! If they wander off, that's totally fine. 🙂</li>
+    </ul>
+  </div>
+  <div class="footer"><span>Made with 💛 by <b>bebomoments</b></span><span>@bebomoments · Toddler Activities &amp; Mom Life</span></div>
+</section>
+
+<!-- PAGE 2 — COLOR MATCH -->
+<section class="page">
+  <div class="brand">bebomoments<small>simple play · no fancy stuff</small></div>
+  <span class="age-chip">Ages 2–3</span>
+  <h2 class="wtitle">Match the Colors 🌈</h2>
+  <p class="wsub">Draw a line from each crayon to the matching paint blob.</p>
+  <div class="divider"></div>
+
+  <div class="matchrow"><div style="font-size:30pt">🖍️</div><div style="flex:1;text-align:center;font-weight:700;color:#cabba6">. . . . . . . . . . . . . . . . .</div><div class="swatch" style="background:var(--coral)"></div></div>
+  <div class="matchrow"><div style="font-size:30pt">🖍️</div><div style="flex:1;text-align:center;font-weight:700;color:#cabba6">. . . . . . . . . . . . . . . . .</div><div class="swatch" style="background:var(--mustard)"></div></div>
+  <div class="matchrow"><div style="font-size:30pt">🖍️</div><div style="flex:1;text-align:center;font-weight:700;color:#cabba6">. . . . . . . . . . . . . . . . .</div><div class="swatch" style="background:var(--sage)"></div></div>
+  <div class="matchrow"><div style="font-size:30pt">🖍️</div><div style="flex:1;text-align:center;font-weight:700;color:#cabba6">. . . . . . . . . . . . . . . . .</div><div class="swatch" style="background:var(--sky)"></div></div>
+  <div class="matchrow"><div style="font-size:30pt">🖍️</div><div style="flex:1;text-align:center;font-weight:700;color:#cabba6">. . . . . . . . . . . . . . . . .</div><div class="swatch" style="background:var(--plum)"></div></div>
+
+  <p class="wsub" style="margin-top:18px">Say each color out loud as you match it. Can you find one thing in the room for each color? 👀</p>
+  <div class="footer"><span>Made with 💛 by <b>bebomoments</b></span><span>Toddler Starter Pack · Page 2</span></div>
+</section>
+
+<!-- PAGE 3 — TRACE LINES -->
+<section class="page">
+  <div class="brand">bebomoments<small>simple play · no fancy stuff</small></div>
+  <span class="age-chip">Ages 2.5–4 · Prewriting</span>
+  <h2 class="wtitle">Trace the Paths ✏️</h2>
+  <p class="wsub">Help each friend get home. Trace the dotted path with your finger first, then a crayon.</p>
+  <div class="divider"></div>
+
+  <div class="trace-row"><span class="lbl">🐝</span>
+    <svg class="trace-svg" viewBox="0 0 600 54"><path d="M10 27 H590" stroke="#d9c9b3" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" fill="none"/></svg><span class="lbl">🌻</span></div>
+  <div class="trace-row"><span class="lbl">🐟</span>
+    <svg class="trace-svg" viewBox="0 0 600 54"><path d="M10 27 Q80 4 150 27 T290 27 T430 27 T570 27" stroke="#d9c9b3" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" fill="none"/></svg><span class="lbl">🌊</span></div>
+  <div class="trace-row"><span class="lbl">🚗</span>
+    <svg class="trace-svg" viewBox="0 0 600 54"><path d="M10 10 L90 44 L170 10 L250 44 L330 10 L410 44 L490 10 L570 44" stroke="#d9c9b3" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span class="lbl">🏠</span></div>
+  <div class="trace-row"><span class="lbl">🐌</span>
+    <svg class="trace-svg" viewBox="0 0 600 54"><path d="M10 27 C60 -6 110 60 160 27 S260 -6 310 27 S410 60 460 27 S560 -6 590 27" stroke="#d9c9b3" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" fill="none"/></svg><span class="lbl">🍄</span></div>
+  <div class="trace-row"><span class="lbl">⭐</span>
+    <svg class="trace-svg" viewBox="0 0 600 54"><path d="M10 44 L150 10 L290 44 L430 10 L570 44" stroke="#d9c9b3" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span class="lbl">🌙</span></div>
+
+  <p class="wsub" style="margin-top:18px">Tip: big arm movements first! Tracing in the air builds the muscles for writing later. 💪</p>
+  <div class="footer"><span>Made with 💛 by <b>bebomoments</b></span><span>Toddler Starter Pack · Page 3</span></div>
+</section>
+
+<!-- PAGE 4 — COUNT 1-5 -->
+<section class="page">
+  <div class="brand">bebomoments<small>simple play · no fancy stuff</small></div>
+  <span class="age-chip">Ages 3–4 · Counting</span>
+  <h2 class="wtitle">Count &amp; Circle 🔢</h2>
+  <p class="wsub">Count the treats. Then color in the right number of circles.</p>
+  <div class="divider"></div>
+
+  <div class="count-grid">
+    <div class="count-line"><div class="numbox">1</div><div class="items">🍎</div><div class="circles"><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span></div></div>
+    <div class="count-line"><div class="numbox">2</div><div class="items">🍌🍌</div><div class="circles"><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span></div></div>
+    <div class="count-line"><div class="numbox">3</div><div class="items">⭐⭐⭐</div><div class="circles"><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span></div></div>
+    <div class="count-line"><div class="numbox">4</div><div class="items">🐢🐢🐢🐢</div><div class="circles"><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span></div></div>
+    <div class="count-line"><div class="numbox">5</div><div class="items">🌸🌸🌸🌸🌸</div><div class="circles"><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span><span class="circ"></span></div></div>
+  </div>
+
+  <p class="wsub" style="margin-top:16px">Touch each item as you count — one number per touch. That's the magic of "one-to-one" counting! ✨</p>
+  <div class="footer"><span>Made with 💛 by <b>bebomoments</b></span><span>Toddler Starter Pack · Page 4</span></div>
+</section>
+
+<!-- PAGE 5 — ANIMAL MATCH -->
+<section class="page">
+  <div class="brand">bebomoments<small>simple play · no fancy stuff</small></div>
+  <span class="age-chip">Ages 2–4 · Thinking</span>
+  <h2 class="wtitle">Who Lives Where? 🐾</h2>
+  <p class="wsub">Draw a line from each animal to its home.</p>
+  <div class="divider"></div>
+
+  <div style="display:flex;gap:24px;">
+    <div class="matchcol">
+      <div class="matchrow"><span style="font-size:34pt">🐶</span><span class="dot r"></span></div>
+      <div class="matchrow"><span style="font-size:34pt">🐝</span><span class="dot y"></span></div>
+      <div class="matchrow"><span style="font-size:34pt">🐠</span><span class="dot b"></span></div>
+      <div class="matchrow"><span style="font-size:34pt">🐦</span><span class="dot g"></span></div>
+      <div class="matchrow"><span style="font-size:34pt">🐝</span><span class="dot p"></span></div>
+    </div>
+    <div class="matchcol">
+      <div class="matchrow"><span class="dot g"></span><span style="font-size:34pt">🪺</span></div>
+      <div class="matchrow"><span class="dot b"></span><span style="font-size:34pt">🐚</span></div>
+      <div class="matchrow"><span class="dot r"></span><span style="font-size:34pt">🏠</span></div>
+      <div class="matchrow"><span class="dot p"></span><span style="font-size:34pt">🌼</span></div>
+      <div class="matchrow"><span class="dot y"></span><span style="font-size:34pt">🍯</span></div>
+    </div>
+  </div>
+
+  <p class="wsub" style="margin-top:16px">Make the animal sounds together as you go. Learning sticks best when it's silly! 🐶🔊</p>
+  <div class="footer"><span>Made with 💛 by <b>bebomoments</b></span><span>Toddler Starter Pack · Page 5 · thank you!</span></div>
+</section>
+
+</body>
+</html>
