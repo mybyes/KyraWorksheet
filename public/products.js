@@ -1,8 +1,10 @@
 /* Curated catalog (placeholders / "coming soon"). Live uploads come from the API.
    Shared by index (app.js) and the shop page (shop.js). Edit cards here. */
 window.PRODUCTS = [
-  { emoji:"✏️", title:"Prewriting & Tracing Pack", age:"Ages 2.5–4", cat:"Prewriting",
-    meta:"20 pages of lines, curves & first letters", price:49, was:99, tag:"BESTSELLER" },
+  { emoji:"✨", title:"Bebo Beginnings™ Pre-Writing Adventure Pack", age:"Ages 2.5–4", cat:"Prewriting",
+    meta:"100 play-based worksheets · stories, not boring lines", price:499, was:1499, tag:"FLAGSHIP",
+    page:"pack.html?slug=bebo-beginnings", featured:true },
+
   { emoji:"🔢", title:"Count & Color 1–10", age:"Ages 3–5", cat:"Maths",
     meta:"Number recognition + one-to-one counting", price:39, was:99 },
   { emoji:"🐾", title:"Animals Activity Bundle", age:"Ages 2.5+", cat:"Themes",
@@ -38,13 +40,13 @@ window.cardHTML = function (item) {
                          : (item.id ? `<span class="badge">NEW</span>` : "");
   const price = free ? `<span class="price free">FREE</span>`
     : `<span class="price">₹${item.price}${item.was ? `<span class="was">₹${item.was}</span>` : ""}</span>`;
-  const href = item.id ? `/worksheet/${item.id}` : null;
+  const href = item.id ? `/worksheet/${item.id}` : (item.page || null);
 
   const thumb = href
-    ? `<a class="thumb cover-thumb" href="${href}">${badge}${cover}</a>`
+    ? `<a class="thumb cover-thumb" href="${esc(href)}">${badge}${cover}</a>`
     : `<div class="thumb cover-thumb">${badge}${cover}</div>`;
   const title = href
-    ? `<a class="p-title-link" href="${href}"><h3 class="p-title">${esc(item.title)}</h3></a>`
+    ? `<a class="p-title-link" href="${esc(href)}"><h3 class="p-title">${esc(item.title)}</h3></a>`
     : `<h3 class="p-title">${esc(item.title)}</h3>`;
 
   let btn;
@@ -52,11 +54,13 @@ window.cardHTML = function (item) {
     btn = free
       ? `<button class="p-btn" data-free data-file="${esc(item.file)}" data-name="${esc(item.title)}">⬇️ Get free</button>`
       : `<button class="p-btn" data-paid data-file="${esc(item.file)}" data-name="${esc(item.title)}">Get it</button>`;
+  } else if (item.page) {
+    btn = `<a class="p-btn" href="${esc(item.page)}">View pack →</a>`;
   } else {
     btn = `<button class="p-btn soon">Coming soon</button>`;
   }
 
-  return `<article class="product${href ? " clickable" : ""}">
+  return `<article class="product${href ? " clickable" : ""}${item.featured ? " wide" : ""}">
     ${thumb}
     <div class="p-body">
       <span class="p-age">${esc(item.age || "")}</span>
