@@ -271,6 +271,30 @@ a.cover-thumb{cursor:pointer;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease;}
 .reveal.in{opacity:1;transform:none;}
 
+/* gated pack — banner only, no worksheet previews */
+.pack-gated .pack-layers{max-width:640px;}
+.pack-gate-banner{
+  position:relative;margin:16px auto 24px;max-width:320px;
+  border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(120,80,40,.16);
+  border:3px solid #fff;
+}
+.pack-gate-cover svg{width:100%;display:block;}
+.pack-gate-lock{
+  background:linear-gradient(135deg,#4E443C,#6b5d4d);color:#fff;text-align:center;
+  padding:14px 16px;font-weight:600;font-size:12.5px;line-height:1.45;
+}
+.pack-gate-lock-icon{font-size:22px;display:block;margin-bottom:4px;}
+.pack-gate-lock strong{display:block;font-family:'Baloo 2';font-size:14px;margin-bottom:3px;}
+.pack-gate-head{text-align:center;}
+.pack-gate-head h1{font-size:30px;color:var(--coral);margin:8px 0 2px;}
+.pack-gate-head .pack-pitch{max-width:480px;margin:0 auto 12px;}
+.pack-gate-head .pack-meta-row{justify-content:center;}
+.pack-gate-head .pack-usp{max-width:460px;margin:12px auto 0;text-align:center;}
+.pack-gate-actions{text-align:center;margin:22px 0 8px;}
+.pack-dl-btn{width:100%;max-width:360px;margin:0 auto;}
+.pack-dl-note{color:var(--muted);font-weight:600;font-size:13px;max-width:340px;margin:10px auto 14px;line-height:1.45;}
+.pack-dm-btn{width:100%;max-width:360px;margin:0 auto;}
+
 /* LAYER 1 — hero */
 .layer-hero{padding-top:12px;padding-bottom:40px;overflow:hidden;}
 .layer-bg-hero{

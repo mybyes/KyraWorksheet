@@ -13,9 +13,11 @@ window.PACKS["bebo-beginnings"] = {
   was: 1499,
   tag: "FLAGSHIP",
   category: "Prewriting",
+  buyUrl: "https://www.instagram.com/bebomoments/",
+  downloadNote: "Tap Download → DM us on Instagram → pay via UPI → we send your full PDF link within a few hours.",
   pitch: "100 play-based developmental worksheets that build pencil control, confidence, and school readiness through stories, games, and hands-on adventures.",
   usp: "Play-based developmental worksheets created by a mom — not boring school worksheets.",
-  heroSample: "01-rainbow-road.png",
+  heroSample: null,
   problem: {
     headline: "Straight lines & ABCs are free everywhere.",
     sub: "Parents don't pay for worksheets. They pay for engagement, confidence, and a system that actually prepares little hands for writing.",
@@ -45,7 +47,7 @@ window.PACKS["bebo-beginnings"] = {
     { q: "Is this just tracing lines?", a: "No. Every page is a mini adventure — help the balloon reach the cloud, the snake reach its log, the rocket blast off. Kids stay engaged because it feels like play, not school." },
     { q: "What age is this for?", a: "Designed for 2.5–4 years. Level 1 uses finger tracing (no pencil). Later levels gently introduce pencil control, mazes, patterns, and story-based paths." },
     { q: "Do I need a color printer?", a: "No. All worksheets work beautifully on plain black & white A4. Pastel colors are soft enough to print fine either way." },
-    { q: "How do I buy?", a: "DM @bebomoments on Instagram. We'll send payment details (UPI) and your printable PDF download link." },
+    { q: "How do I download the pack?", a: "Tap the Download button → DM @bebomoments on Instagram → pay via UPI → we send your full printable PDF. Worksheet pages are not shown on the website before purchase." },
     { q: "Can I reuse the pages?", a: "Yes! Slip pages into a plastic sleeve and use a dry-erase marker — reuse forever." },
   ],
   skills: [

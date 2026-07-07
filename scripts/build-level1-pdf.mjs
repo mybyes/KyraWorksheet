@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 import { PDFDocument } from "pdf-lib";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const levelDir = path.join(root, "public", "worksheets", "bebo-beginnings", "level-1");
-const outPath = path.join(root, "public", "worksheets", "bebo-beginnings", "level-1-finger-warmup-samples.pdf");
+const levelDir = path.join(root, "source-assets", "bebo-beginnings", "level-1");
+const outPath = path.join(root, "source-assets", "bebo-beginnings", "level-1-finger-warmup-samples.pdf");
 
 const files = readdirSync(levelDir)
   .filter((f) => f.endsWith(".png"))

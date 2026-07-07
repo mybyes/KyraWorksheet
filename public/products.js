@@ -55,7 +55,7 @@ window.cardHTML = function (item) {
       ? `<button class="p-btn" data-free data-file="${esc(item.file)}" data-name="${esc(item.title)}">⬇️ Get free</button>`
       : `<button class="p-btn" data-paid data-file="${esc(item.file)}" data-name="${esc(item.title)}">Get it</button>`;
   } else if (item.page) {
-    btn = `<a class="p-btn" href="${esc(item.page)}">View pack →</a>`;
+    btn = `<a class="p-btn" href="${esc(item.page)}">Download pack →</a>`;
   } else {
     btn = `<button class="p-btn soon">Coming soon</button>`;
   }
