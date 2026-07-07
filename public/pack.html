@@ -8,26 +8,51 @@
 <meta property="og:title" content="Bebo Beginnings™ · Pre-Writing Adventure Pack">
 <meta property="og:description" content="Play-based developmental worksheets that build pencil control through stories, not boring lines.">
 <meta property="og:type" content="product">
+<meta property="og:image" content="/worksheets/bebo-beginnings/level-1/01-rainbow-road.png">
 <meta name="theme-color" content="#FF7043">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
-<body>
-<nav class="topnav">
+<body class="pack-page">
+<nav class="topnav layer-nav">
   <a class="topnav-brand" href="/"><img src="assets/logo.png" alt="bebomoments"></a>
   <div class="topnav-links">
-    <a href="shop.html">🛍️ Shop</a>
-    <a href="play.html">🎲 Play</a>
-    <a href="shop.html#search">🔎 Search</a>
+    <a href="#preview">Preview</a>
+    <a href="#levels">Levels</a>
+    <a href="shop.html">Shop</a>
   </div>
 </nav>
-<div class="wrap pack-wrap" id="packRoot">
+
+<main id="packRoot" class="pack-layers">
   <p class="hint">Loading pack…</p>
+</main>
+
+<!-- Layer: sticky conversion bar -->
+<aside id="packSticky" class="pack-sticky" hidden>
+  <div class="pack-sticky-in">
+    <div class="pack-sticky-txt">
+      <strong id="stickyTitle">Bebo Beginnings™</strong>
+      <span id="stickyPrice">₹499</span>
+    </div>
+    <a id="stickyCta" class="btn pack-sticky-btn" href="https://www.instagram.com/bebomoments/" target="_blank" rel="noopener">Get the pack</a>
+  </div>
+</aside>
+
+<!-- Layer: fullscreen preview lightbox -->
+<div id="packLightbox" class="pack-lightbox" hidden aria-hidden="true">
+  <button class="pack-lb-x" id="lbClose" aria-label="Close preview">✕</button>
+  <button class="pack-lb-nav pack-lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <figure class="pack-lb-fig">
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="pack-lb-nav pack-lb-next" id="lbNext" aria-label="Next">›</button>
 </div>
-<script src="packs/bebo-beginnings.js?v=1"></script>
-<script src="pack.js?v=1"></script>
+
+<script src="packs/bebo-beginnings.js?v=2"></script>
+<script src="pack.js?v=2"></script>
 </body>
 </html>
